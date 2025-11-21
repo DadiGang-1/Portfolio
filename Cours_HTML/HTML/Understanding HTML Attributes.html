@@ -1,0 +1,151 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Understanding HTML Attributes</title>
+	<link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+	<article id="269e7c05-92d1-80bd-86b6-e2962899a4ca" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><img class="icon notion-static-icon"
+					src="https://www.notion.so/icons/bookmark-outline_yellow.svg" /></div>
+			<h1 class="page-title">Understanding HTML Attributes</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<h2 id="269e7c05-92d1-809b-a81e-ece234563c54" class=""><strong>What Role Does HTML Play on the Web?</strong>
+			</h2>
+			<figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex"
+				id="269e7c05-92d1-80a3-81fc-e1f6274b6d26">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p id="269e7c05-92d1-80aa-8d91-d619809d15cf" class=""><strong>HTML </strong>=
+						<strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage
+					</p>
+				</div>
+			</figure>
+			<p id="269e7c05-92d1-8006-afa3-f036b946b5a4" class="">La plupart des éléments on une balise d’ouverture et
+				une balise de fermeture. Entre les balises, on a le contenu. Le contenu peut être du texte ou bien un
+				autre élément HTML.</p>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre id="269e7c05-92d1-8001-8202-f92e64c6a31e"
+				class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;p&gt;Hello&lt;/p&gt;</code></pre>
+			<p id="269e7c05-92d1-80a1-af12-e21a2d983c0e" class="">Certain éléments n’ont pas de balise de fermeture.
+				Ceux-ci sont connus sous le nom de ”<mark class="highlight-yellow"><strong>Éléments
+						vides</strong></mark>”.</p>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre id="269e7c05-92d1-8056-933f-c8334f7f586c"
+				class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;img src=&quot;example-cat-img-url&quot; alt=&quot;Cat sleeping in the grass&quot;&gt;</code></pre>
+			<figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex"
+				id="269e7c05-92d1-806e-b25e-c73cde652be3">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p id="269e7c05-92d1-8091-9df5-fc2a75b73a75" class="">Les éléments vide ne peuvent <strong>pas avoir
+							de contenu</strong> et ont seulement <strong>une balise d’ouverture</strong>.</p>
+				</div>
+			</figure>
+			<figure class="block-color-pink_background callout" style="white-space:pre-wrap;display:flex"
+				id="26ae7c05-92d1-8001-af07-f98bb2ffc561">
+				<div style="font-size:1.5em"><img class="icon notion-static-icon"
+						src="https://www.notion.so/icons/trophy_yellow.svg" /></div>
+				<div style="width:100%">
+					<p id="26ae7c05-92d1-80e8-aa0f-d35db03a4110" class=""><strong><span
+								style="border-bottom:0.05em solid">Best Practice :</span></strong> toujours mettre une
+						description à une image</p>
+				</div>
+			</figure>
+			<p id="269e7c05-92d1-80ec-bd1e-c75e88c45653" class="">Un élément image contient des attributs avec une
+				valeur pour ajuster le comportement de l’élément HTML. </p>
+			<ul id="269e7c05-92d1-80fe-89b0-df1bf06dca8f" class="bulleted-list">
+				<li style="list-style-type:disc"><code>src</code> utilisé pour spécifier la position de l’image.</li>
+			</ul>
+			<ul id="269e7c05-92d1-807a-b6f1-f371f0b337ec" class="bulleted-list">
+				<li style="list-style-type:disc"><code>alt</code> utilisé pour donner une courte description.</li>
+			</ul>
+			<p id="269e7c05-92d1-806f-9004-cf977f11f225" class="">
+			</p>
+			<h2 id="269e7c05-92d1-807e-b71a-c02cf7988e98" class=""><strong>What Are Attributes, and How Do They
+					Work?</strong></h2>
+			<blockquote id="269e7c05-92d1-80ae-835e-c42afc2a2933" class="">Un attribut est une valeur placé dans la
+				balise d’ouverture de l’élément HTML. Il donne des informations additionnelles à l’élément ou spécifie
+				comment il doit se comporter.</blockquote>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre id="269e7c05-92d1-80a7-8fa1-c445032701f1"
+				class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;element attribute=&quot;value&quot;&gt;&lt;/element&gt;</code></pre>
+			<figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex"
+				id="269e7c05-92d1-808c-b0ab-d74c7682aa07">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p id="269e7c05-92d1-800f-bccf-c236ffa10290" class="">Un attribut est toujours suivi d’un signe égal
+						(=) et d’une valeur entre guillemets (“”) et peut-être un entier ou une chaine.</p>
+				</div>
+			</figure>
+			<ul id="269e7c05-92d1-80c8-8b5b-e4c54af842e2" class="bulleted-list">
+				<li style="list-style-type:disc"><code>href</code> utilisé pour indiquer l’URL d’un lien.</li>
+			</ul>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre id="269e7c05-92d1-804c-a2e6-c679b2acc7b7"
+				class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;a href=&quot;https://www.example-website.com&quot;&gt;Visit our website&lt;/a&gt;</code></pre>
+			<ul id="269e7c05-92d1-801a-a5a1-c645bc2d2208" class="bulleted-list">
+				<li style="list-style-type:disc"><code>src</code> utilisé pour spécifier la position de l’image.</li>
+			</ul>
+			<ul id="269e7c05-92d1-80ca-a889-d2ac1e5ff0f9" class="bulleted-list">
+				<li style="list-style-type:disc"><code>alt</code> utilisé pour donner une courte description.</li>
+			</ul>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre id="269e7c05-92d1-8009-acfd-de20cd8b3a0a"
+				class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;img src=&quot;image.jpg&quot; alt=&quot;A beautiful image&quot; /&gt;</code></pre>
+			<ul id="269e7c05-92d1-805a-8385-d4f7dceb0cb5" class="bulleted-list">
+				<li style="list-style-type:disc"><code>input</code> est une balise utiliser pour collecter des données
+					de l’utilisateur.</li>
+			</ul>
+			<ul id="269e7c05-92d1-80bc-9ba8-d48837ed07d9" class="bulleted-list">
+				<li style="list-style-type:disc"><code>type</code> attribut pour spécifier le type d’entrée.</li>
+			</ul>
+			<ul id="269e7c05-92d1-80bc-8987-cdfaff60f730" class="bulleted-list">
+				<li style="list-style-type:disc"><code>checked</code> utilisé pour cocher l’élément HTML et ne demande
+					pas de valeur car c’est un attribut booléen comme eux :
+					<code>disabled</code>, <code>readonly</code>, et <code>required</code> .</li>
+			</ul>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre id="269e7c05-92d1-802b-8aad-c76974c92d9d"
+				class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;input type=&quot;checkbox&quot; checked /&gt;</code></pre>
+			<p id="269e7c05-92d1-806b-8f0a-c7dade56608b" class="">
+			</p>
+		</div>
+	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+
+</html>
