@@ -130,7 +130,7 @@ img {
 }
 
 .collection-content td {
-	white-space: pre-wrap;
+	/*white-space: pre-wrap;*/
 	word-break: break-word;
 }
 
@@ -280,7 +280,7 @@ ol > li {
 	margin-right: 0.5em;
 	margin-top: 0.3em;
 	margin-bottom: 0.3em;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 
 .collection-title {
@@ -399,7 +399,7 @@ p > .user {
 
 td > .user,
 td > time {
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 
 input[type="checkbox"] {
@@ -440,7 +440,7 @@ code {
 }
 
 .code-wrap {
-	white-space: pre-wrap;
+	/*white-space: pre-wrap;*/
 	word-break: break-all;
 }
 
@@ -476,7 +476,7 @@ blockquote.quote-large {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	height: 1.75em;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 
 .bookmark-text {
