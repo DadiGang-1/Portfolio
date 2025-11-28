@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<article class="page sans">
+	<article  class="page sans">
 		<header>
 			<div class="page-header-icon undefined"><img class="icon notion-static-icon"
 					src="https://www.notion.so/icons/bookmark-outline_yellow.svg" /></div>
@@ -15,9 +15,160 @@
 			<p class="page-description"></p>
 		</header>
 		<div class="page-body">
-			<h2><strong>What Are the Roles of the HTML Audio and
+			<h2  class=""><strong>What Are the Roles of the HTML Audio and
 					Video Elements, and How Do They Work? </strong></h2>
-			<p></p>
+			<figure class="block-color-yellow_background callout" style="display:flex"
+				>
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p  class="">Les éléments <code>audio</code> et
+						<code>video</code> permettent d’ajouter du son et des vidéos à votre page HTML.</p>
+					<p  class=""><strong><span
+								style="border-bottom:0.05em solid">Format supportés :</span></strong></p>
+					<ul  class="bulleted-list">
+						<li style="list-style-type:disc"><code>audio</code> → <code>mp3, wav, ogg</code></li>
+					</ul>
+					<ul  class="bulleted-list">
+						<li style="list-style-type:disc"><code>video</code> → <code>mp4, ogg, webm</code></li>
+					</ul>
+				</div>
+			</figure>
+			<h3  class="">Audio</h3>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre  class="code "><code class="language-HTML" style="word-break:break-all">&lt;audio
+  src=&quot;https://cdn.freecodecamp.org/curriculum/js-music-player/can&#x27;t-stay-down.mp3&quot;
+  loop
+  muted
+  controls&gt;
+&lt;/audio&gt;</code></pre>
+			<p  class="">Les attributs de <code>audio</code> :</p>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>src=&quot;&quot;</code> La source doit pointer vers l’emplacement
+					de votre fichier audio.</li>
+			</ul>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>controls</code> Permet d’afficher le lecteur audio. Pour voir les
+					aperçus, vous devez activer l’éditeur interactif. Permet à l’utilisateur de gérer la lecture audio,
+					volume, pause et lecture.</li>
+			</ul>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>loop</code> Permet d’afficher l’option pour activer la lecture en
+					continu.</li>
+			</ul>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>muted</code> Permet d’afficher l’option pour couper le son. La
+					lecture commencera en mode muet.</li>
+			</ul>
+			<figure class="block-color-yellow_background callout" style="display:flex"
+				>
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p  class=""><strong><span
+								style="border-bottom:0.05em solid">Les formats audios :</span></strong> La compatibilité
+						varie en fonction du navigateur. Pour être responsive, vous pouvez utiliser l’élément
+						<code>source</code> dans l’élément <code>audio</code>.</p>
+					<p  class=""><em>Le navigateur lira les sources dans
+							l’ordre, jusqu’à trouver la première source qu’il reconnaît.</em></p>
+				</div>
+			</figure>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre  class="code "><code class="language-HTML" style="word-break:break-all">&lt;audio controls&gt;
+  &lt;source src=&quot;audio.ogg&quot; type=&quot;audio/ogg&quot; /&gt;
+  &lt;source src=&quot;audio.wav&quot; type=&quot;audio/wav&quot; /&gt;
+  &lt;source src=&quot;audio.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+&lt;/audio&gt;</code></pre>
+			<figure class="block-color-pink_background callout" style="display:flex"
+				>
+				<div style="font-size:1.5em"><img class="icon notion-static-icon"
+						src="https://www.notion.so/icons/trophy_yellow.svg" /></div>
+				<div style="width:100%">
+					<p  class=""><strong><span
+								style="border-bottom:0.05em solid">Best Practice :</span></strong> Utiliser plusieurs
+						source pour vous d’adapter à tous les navigateurs.</p>
+				</div>
+			</figure>
+			<h3  class="">Vidéo</h3>
+			<figure class="block-color-yellow_background callout" style="display:flex"
+				>
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p  class="">Tous les attributs vu précédemment sont
+						également pris en charge par l’élément <code>video</code>.</p>
+				</div>
+			</figure>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre  class="code "><code class="language-HTML" style="word-break:break-all">&lt;video
+  src=&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;
+  loop
+  controls
+  muted
+  autoplay 
+  poster=&quot;https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217&quot;
+  width=&quot;400&quot;&gt;
+&lt;/video&gt;</code></pre>
+			<p  class="">Les attributs de <code>video</code>:</p>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>autoplay</code> Permet de lancer la vidéo à l’ouverture
+					automatiquement Pour voir les aperçus, vous devez activer l’éditeur interactif.</li>
+			</ul>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>width=&quot;&quot;</code> Permet d’ajuster la taille de la vidéo
+					au mieux à la fenêtre d’aperçu.</li>
+			</ul>
+			<ul  class="bulleted-list">
+				<li style="list-style-type:disc"><code>poster=&quot;&quot;</code> Permet d’afficher une image pendant
+					que la vidéo charge.</li>
+			</ul>
+			<figure class="block-color-yellow_background callout" style="display:flex"
+				>
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">
+					<p  class=""><strong><span
+								style="border-bottom:0.05em solid">Les formats vidéos :</span></strong> La compatibilité
+						varie en fonction du navigateur. Pour être responsive, vous pouvez utiliser l’élément
+						<code>source</code> dans l’élément <code>video</code>.</p>
+					<p  class=""><em>Le navigateur lira les sources dans
+							l’ordre, jusqu’à trouver la première source qu’il reconnaît.</em></p>
+				</div>
+			</figure>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+				crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+				crossorigin="anonymous" referrerPolicy="no-referrer" />
+			<pre  class="code "><code class="language-HTML" style="word-break:break-all">&lt;video width=&quot;500&quot; controls&gt;
+    &lt;source src=&quot;/video/video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    &lt;source src=&quot;/video/video.ogv&quot; type=&quot;video/ogg&quot; /&gt;
+    &lt;source src=&quot;/video/video.webm&quot; type=&quot;video/webm&quot; /&gt;
+&lt;/video&gt;</code></pre>
+			<figure class="block-color-pink_background callout" style="display:flex"
+				>
+				<div style="font-size:1.5em"><img class="icon notion-static-icon"
+						src="https://www.notion.so/icons/trophy_yellow.svg" /></div>
+				<div style="width:100%">
+					<p  class=""><strong><span
+								style="border-bottom:0.05em solid">Best Practice :</span></strong> Utiliser plusieurs
+						source pour vous d’adapter à tous les navigateurs.</p>
+				</div>
+			</figure>
+			<p  class="">
+			</p>
 		</div>
 	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
 </body>
