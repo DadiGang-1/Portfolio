@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Debug a Pet Adoption Page</title>
 	<link rel="stylesheet" href="../../style.css">
+	<link rel="stylesheet" href="../JS/quiz.css">
 </head>
 
 <body>
@@ -53,8 +54,44 @@
 
 &lt;h2&gt;Adopt a dog!&lt;/h2&gt;
 &lt;a href=&quot;/dogs&quot;&gt;Visit dogs page&lt;/a&gt;</code></pre>
-		</div>
-	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
-</body>
+
+		<section class="exercise">
+			<h3>Exercice</h3>
+		</section>
+
+		<script src="../JS/quiz.js"></script>
+
+
+		<script>
+			// Ajout des 3 exercices pour cette page (utiliser les chevrons < > en clair)
+			addExercise("<img> — Choisis la bonne correction", ["<img href=...>","<img src=... alt=...>","<img data-src=...>"], "<img src=... alt=...>");
+			addExercise("<a> — Choisis la bonne correction", ["<a src=...>","<a href=...>","<link href=...>"], "<a href=...>");
+			addExercise("Img autofermée — Quel est le bon usage?", ["<img ... > (sans </img>)","<img ... ></img>","<img />"], "<img ... > (sans </img>)");
+			// Définir les indices pour cette page (bouton Indice ouvre ce modal)
+			setExerciseHints([
+				{ href: 'Working with Images and SVGs.html', text: 'Working with Images and SVGs — attributs d\'images' },
+				{ href: 'Working with Links.html', text: 'Working with Links — quand utiliser href' },
+				{ href: 'Understanding HTML Attributes.html', text: 'Understanding HTML Attributes — noms et valeurs d\'attributs' }
+			]);
+		</script>
+
+
+		<script>
+		function initExercises(){
+		if (typeof addExercise !== 'function') { setTimeout(initExercises, 50); return; }
+		// Exemple QCM
+		addExercise("<img> — Choisis la bonne correction", ["<img href=...>","<img src=... alt=...>","<img data-src=...>"], "<img src=... alt=...>");
+		addExercise("<a> — Choisis la bonne correction", ["<a src=...>","<a href=...>","<link href=...>"], "<a href=...>");
+		addExercise("Img autofermée — Quel est le bon usage?", ["<img ... > (sans </img>)","<img ... ></img>","<img />"], "<img ... > (sans </img>)");
+		// Définir les indices pour la page (optionnel)
+		setExerciseHints([
+			{ href: 'Working with Images and SVGs.html', text: 'Working with Images and SVGs — attributs d\'images' },
+			{ href: 'Working with Links.html', text: 'Working with Links — quand utiliser href' },
+			{ href: 'Understanding HTML Attributes.html', text: 'Understanding HTML Attributes — noms et valeurs d\'attributs' }
+		]);
+		}
+		initExercises();
+		</script>
+	</body>
 
 </html>
