@@ -154,10 +154,3 @@ initExercises();
 ```
 
 ---
-
-Si tu veux, je peux :
-- Générer un `cloze.js` (texte à trou) avec exemple prêt à l'emploi ✅
-- Extraire les appels `addExercise(...)` de chaque page dans des fichiers `exercises.<page>.js` pour organiser le repo ✅
-- Ajouter des tests simples pour les modules (logiques) 🧪
-
-Dis-moi quelle option tu préfères et je l'implémente. Bonne continuation !
