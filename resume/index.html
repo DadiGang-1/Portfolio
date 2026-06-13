@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRENOM NOM — Ingénieur Logiciel</title>
+  <meta name="description" content="Ingénieur logiciel diplômé ESIEA, référent technique, spécialisé en architecture logicielle et environnements industriels critiques." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --bg:        #0D0D0D;
+      --bg-card:   #141414;
+      --bg-tag:    #1A1A1A;
+      --border:    #232323;
+      --accent:    #00E5A0;
+      --accent-dim: #00b87d;
+      --text:      #F0EDE6;
+      --text-muted:#888;
+      --text-dim:  #555;
+      --mono:      'JetBrains Mono', monospace;
+      --sans:      'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: opacity .2s; }
+    a:hover { opacity: .75; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Nav bar ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,13,13,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: .8rem;
+      color: var(--accent);
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--accent); opacity: 1; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--accent);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-eyebrow span {
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .hero h1 {
+      font-family: var(--mono);
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      margin-top: 12px;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      max-width: 560px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--mono);
+      font-size: .76rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: border-color .2s, color .2s;
+    }
+    .hero-link:hover { border-color: var(--accent); color: var(--accent); opacity: 1; }
+    .hero-link i { font-size: .8rem; }
+
+    /* ── Section ── */
+    section {
+      padding: 52px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--accent);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Profile ── */
+    .profile-text {
+      max-width: 680px;
+      color: var(--text-muted);
+      font-size: .95rem;
+      line-height: 1.75;
+    }
+
+    .profile-text strong { color: var(--text); font-weight: 600; }
+
+    /* ── Skills grid ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px 20px;
+      transition: border-color .2s;
+    }
+    .skill-card:hover { border-color: var(--accent); }
+
+    .skill-card-title {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--accent);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--text-muted);
+      background: var(--bg-tag);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+
+    .tag.accent {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(0,229,160,.06);
+    }
+
+    /* ── Experience ── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 20px;
+      margin-bottom: 36px;
+    }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-meta { grid-column: 1; }
+
+    .exp-period {
+      grid-column: 2;
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .exp-company {
+      font-family: var(--mono);
+      font-size: .76rem;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .exp-type {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: .62rem;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1px 7px;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .exp-summary {
+      grid-column: 1 / -1;
+      color: var(--text-muted);
+      font-size: .9rem;
+      margin-top: 8px;
+      margin-left: 0;
+    }
+
+    .exp-list {
+      grid-column: 1 / -1;
+      margin-top: 10px;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-list li {
+      font-size: .88rem;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .exp-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: .75em;
+      top: 2px;
+    }
+
+    .exp-list strong { color: var(--text); font-weight: 600; }
+
+    .exp-stack {
+      grid-column: 1 / -1;
+      margin-top: 12px;
+    }
+
+    .exp-divider {
+      border: none;
+      border-top: 1px dashed var(--border);
+      margin: 28px 0;
+    }
+
+    /* ── Projects ── */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px 26px;
+      margin-bottom: 16px;
+      transition: border-color .2s;
+    }
+    .project-card:hover { border-color: var(--accent); }
+    .project-card:last-child { margin-bottom: 0; }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-context {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--text-dim);
+      margin-top: 3px;
+    }
+
+    .project-badge {
+      font-family: var(--mono);
+      font-size: .65rem;
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      border: 1px solid;
+    }
+
+    .badge-prod  { color: var(--accent); border-color: var(--accent); background: rgba(0,229,160,.06); }
+    .badge-wip   { color: #f5a623; border-color: #f5a623; background: rgba(245,166,35,.06); }
+
+    .project-desc {
+      margin-top: 12px;
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .project-features {
+      margin-top: 12px;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .project-features li {
+      font-size: .83rem;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+    }
+    .project-features li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: .75em;
+    }
+
+    .project-stack { margin-top: 14px; }
+
+    /* ── Education ── */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:first-child { padding-top: 0; }
+    .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .edu-degree {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .edu-school {
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+    .edu-field {
+      font-size: .83rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .edu-year {
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    /* ── Learning ── */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .learning-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: .85rem;
+    }
+
+    .learning-date {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .learning-title {
+      color: var(--text-muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+    }
+
+    footer span { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-period { grid-column: 1; margin-top: -6px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Cursor blink ── */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: .85em;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-left: 4px;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    /* ── Fade in on load ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero, section { animation: fadeUp .5s ease both; }
+    section:nth-child(2)  { animation-delay: .05s; }
+    section:nth-child(3)  { animation-delay: .10s; }
+    section:nth-child(4)  { animation-delay: .15s; }
+    section:nth-child(5)  { animation-delay: .20s; }
+    section:nth-child(6)  { animation-delay: .25s; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">PRENOM.NOM<span class="cursor"></span></span>
+    <ul class="nav-links">
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#formation">Formation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="container">
+  <header class="hero">
+    <p class="hero-eyebrow"><span></span>Ingénieur Logiciel · Référent Technique</p>
+    <h1>PRENOM <em>NOM</em></h1>
+    <p class="hero-subtitle">
+      Architecte et développeur full-stack en environnements industriels critiques.
+      Du besoin métier au déploiement en production — seul ou en équipe.
+    </p>
+    <div class="hero-links">
+      <a class="hero-link" href="mailto:MAIL"><i class="fa fa-envelope"></i> MAIL</a>
+      <a class="hero-link" href="TEL"><i class="fa fa-phone"></i> TEL</a>
+      <a class="hero-link" href="LINKEDIN_URL" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="hero-link" href="GITHUB_URL" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a class="hero-link" href="#"><i class="fa fa-map-marker-alt"></i> Paris, France</a>
+    </div>
+  </header>
+
+  <!-- ── Profil ── -->
+  <section id="profil">
+    <p class="section-label">Profil</p>
+    <p class="profile-text">
+      Ingénieur logiciel diplômé de l'ESIEA, je suis <strong>référent technique unique</strong> sur plusieurs logiciels critiques
+      utilisés en production dans un atelier industriel. J'interviens sur <strong>l'ensemble du cycle de vie logiciel</strong> :
+      analyse des besoins métier, conception d'architecture, développement full-stack, UX/UI, CI/CD et observabilité en production.
+      <br><br>
+      Habitué à opérer avec une forte autonomie dans des contextes à forts enjeux (contraintes industrielles, délais serrés, précision
+      au 1/10 mm), j'applique rigoureusement les bonnes pratiques — Clean Code, SOLID, DDD, TDD — et je m'autoformes continuellement.
+      Je suis reconnu pour ma fiabilité, ma rigueur et ma capacité à livrer des solutions robustes, évolutives et directement
+      utiles aux équipes terrain.
+    </p>
+  </section>
+
+  <!-- ── Compétences ── -->
+  <section id="competences">
+    <p class="section-label">Compétences</p>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <p class="skill-card-title">Architecture & Leadership</p>
+        <div class="tags">
+          <span class="tag accent">Clean Architecture</span>
+          <span class="tag accent">DDD</span>
+          <span class="tag accent">Référent technique</span>
+          <span class="tag">Client/serveur</span>
+          <span class="tag">Services Windows</span>
+          <span class="tag">Scalabilité</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <p class="skill-card-title">Front-end & UX</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">UX industrielle</span>
+          <span class="tag">Design System</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <p class="skill-card-title">Back-end & Intégration</p>
+        <div class="tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">NestJS</span>
+          <span class="tag">Java</span>
+          <span class="tag">WLangage</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">API REST</span>
+          <span class="tag">XML</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <p class="skill-card-title">Data</p>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">HFSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Data modeling</span>
+          <span class="tag accent">ACID</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <p class="skill-card-title">DevOps & Cloud</p>
+        <div class="tags">
+          <span class="tag accent">CI/CD</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Docker</span>
+          <span class="tag">SonarQube</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Observabilité</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <p class="skill-card-title">Qualité & Méthodes</p>
+        <div class="tags">
+          <span class="tag">Clean Code</span>
+          <span class="tag">SOLID</span>
+          <span class="tag">TDD</span>
+          <span class="tag">Revue de code</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">Lean</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Expérience ── -->
+  <section id="experience">
+    <p class="section-label">Expérience</p>
+
+    <!-- CDI -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-role">Ingénieur Logiciel · Référent Technique <span class="exp-type">CDI</span></p>
+        <p class="exp-company">PVC ALU Création — Santeny</p>
+      </div>
+      <p class="exp-period">Sept. 2024 — Aujourd'hui</p>
+      <p class="exp-summary">
+        Référent technique unique, en charge de la digitalisation complète d'un atelier industriel.
+        Je conçois, développe et maintiens plusieurs logiciels critiques — de l'analyse des besoins au suivi en production.
+      </p>
+      <ul class="exp-list">
+        <li>Développement d'un <strong>logiciel métier complet</strong> en WinDev/WLangage : gestion utilisateurs, quotas, KPI, gamification, mailing automatisé — front, back, UX/UI, données et CI/CD menés seul</li>
+        <li>Conception et déploiement d'un <strong>système d'automatisation de centres d'usinage industriels</strong> en Java, pilotant des machines en service continu ou à la demande, avec précision au 1/10 mm</li>
+        <li>Mise en place d'une <strong>pipeline CI/CD</strong> complète avec SonarQube pour la qualité et la fiabilité des déploiements</li>
+        <li><strong>Architecture client/serveur</strong> pour la centralisation des données ; modélisation et intégrité (ACID, HFSQL/SQL)</li>
+        <li><strong>Observabilité en production</strong> : collecte de métriques, logs et traces pour le diagnostic et la stabilité</li>
+        <li>Conception d'un <strong>design system UX/UI</strong> adapté aux opérateurs terrain</li>
+        <li>Scripts <strong>PowerShell</strong> pour l'automatisation de processus annexes</li>
+      </ul>
+      <div class="exp-stack">
+        <div class="tags">
+          <span class="tag accent">WinDev / WLangage</span>
+          <span class="tag accent">Java</span>
+          <span class="tag">SQL / HFSQL</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">SonarQube</span>
+          <span class="tag">XML</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Services Windows</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="exp-divider" />
+
+    <!-- Alternance -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-role">Assistant Amélioration Continue <span class="exp-type">Alternance</span></p>
+        <p class="exp-company">PVC ALU Création — Santeny</p>
+      </div>
+      <p class="exp-period">Sept. 2021 — Août 2024</p>
+      <p class="exp-summary">
+        3 ans d'alternance en parallèle de la formation ingénieur ESIEA. Contribution à l'amélioration continue des processus de production et développement des premiers outils internes.
+      </p>
+    </div>
+
+    <hr class="exp-divider" />
+
+    <!-- Stage -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-role">Stagiaire Assistant Amélioration Continue <span class="exp-type">Stage</span></p>
+        <p class="exp-company">PVC ALU Création — Santeny</p>
+      </div>
+      <p class="exp-period">Avr. — Juin 2021</p>
+      <p class="exp-summary">Découverte de l'environnement industriel et initiation aux processus de production.</p>
+    </div>
+  </section>
+
+  <!-- ── Projets ── -->
+  <section id="projets">
+    <p class="section-label">Projets</p>
+
+    <!-- Logiciel métier -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <p class="project-title">Logiciel métier — Digitalisation d'atelier industriel</p>
+          <p class="project-context">Entreprise · PVC ALU Création · 2024</p>
+        </div>
+        <span class="project-badge badge-prod">En production</span>
+      </div>
+      <p class="project-desc">
+        Logiciel métier complet conçu et livré seul — de l'analyse des besoins à la maintenance en production.
+        Couvre la digitalisation des processus de production, l'interconnexion atelier/bureaux et le pilotage de la performance opérationnelle.
+      </p>
+      <ul class="project-features">
+        <li>Gestion des comptes utilisateurs, rôles et permissions</li>
+        <li>Suivi des objectifs d'entreprise et quotas journaliers</li>
+        <li>Statistiques de production et indicateurs de performance (KPI)</li>
+        <li>Gamification pour l'engagement et la progression des opérateurs</li>
+        <li>Système de mailing intégré, automatisé et modulable</li>
+        <li>Architecture client/serveur — configuration et mise en place du serveur</li>
+        <li>Observabilité : métriques, logs, traces en production</li>
+        <li>Design system UX/UI adapté au terrain + pipeline CI/CD complète</li>
+        <li>Scripts PowerShell pour l'automatisation de processus annexes</li>
+      </ul>
+      <div class="project-stack">
+        <div class="tags">
+          <span class="tag accent">WinDev</span>
+          <span class="tag accent">WLangage</span>
+          <span class="tag">SQL / HFSQL</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Architecture client/serveur</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usinage -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <p class="project-title">Pilotage automatisé de centres d'usinage industriels</p>
+          <p class="project-context">Entreprise · PVC ALU Création · 2024</p>
+        </div>
+        <span class="project-badge badge-prod">En production</span>
+      </div>
+      <p class="project-desc">
+        Système d'automatisation du pilotage de multiples centres d'usinage hétérogènes. Chaque application tourne
+        en service Windows sur un serveur et surveille les données entrantes en continu, ou est pilotée à la demande
+        via une interface utilisateur. Précision exigée : 1/10 mm.
+      </p>
+      <ul class="project-features">
+        <li>Applications Java déployées en services Windows (monitoring continu)</li>
+        <li>Interface utilisateur pour la génération manuelle de fichiers de pilotage</li>
+        <li>Traitement et transformation de fichiers XML de fabrication en instructions machine</li>
+        <li>Conversion multi-formats pour compatibilité entre constructeurs et générations de machines</li>
+        <li>Base de données dédiée par application, paramétrable depuis l'UI</li>
+        <li>Règles de validation et contrôle avant exécution machine</li>
+        <li>Pipeline CI/CD avec SonarQube — qualité du code garantie</li>
+      </ul>
+      <div class="project-stack">
+        <div class="tags">
+          <span class="tag accent">Java</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">SonarQube</span>
+          <span class="tag">XML</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Services Windows</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plateforme perso -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <p class="project-title">Plateforme pédagogique — Développement web & logiciel</p>
+          <p class="project-context">Projet personnel · 2025</p>
+        </div>
+        <span class="project-badge badge-wip">En cours</span>
+      </div>
+      <p class="project-desc">
+        Bibliothèque de cours en ligne dédiée au développement web et logiciel (HTML, CSS, JS, Java, réseaux).
+        Architecture statique hébergée sur GitHub Pages, avec système d'interactions et mini-exercices pour l'auto-évaluation.
+        Évolution prévue : backend, domaine dédié, monétisation légère.
+      </p>
+      <div class="project-stack">
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Formation ── -->
+  <section id="formation">
+    <p class="section-label">Formation</p>
+
+    <div class="edu-item">
+      <div>
+        <p class="edu-degree">Diplôme d'Ingénieur — Software Engineering</p>
+        <p class="edu-school">ESIEA</p>
+        <p class="edu-field">Big Data (Hadoop, Spark), Cloud AWS, Architecture logiciel, UX/UI (Figma), FullStack (Vue, Cypress, Supabase)</p>
+      </div>
+      <p class="edu-year">2021 — 2024</p>
+    </div>
+
+    <div class="edu-item">
+      <div>
+        <p class="edu-degree">DUT Génie Électrique et Informatique Industrielle</p>
+        <p class="edu-school">UPEC</p>
+        <p class="edu-field">Informatique, Réseau, Automatique, Électronique de puissance</p>
+      </div>
+      <p class="edu-year">2019 — 2021</p>
+    </div>
+
+    <div class="edu-item">
+      <div>
+        <p class="edu-degree">Baccalauréat Scientifique — Science de l'Ingénieur</p>
+        <p class="edu-school">Lycée Guillaume Budé — Limeil-Brévannes</p>
+      </div>
+      <p class="edu-year">2015 — 2019</p>
+    </div>
+
+    <br />
+    <p class="section-label" style="margin-bottom: 20px;">Formation Continue</p>
+    <div class="learning-grid">
+      <div class="learning-item">
+        <span class="learning-date">02/2025</span>
+        <span class="learning-title">JavaScript & Algorithmique — FreeCodeCamp</span>
+      </div>
+      <div class="learning-item">
+        <span class="learning-date">10/2024</span>
+        <span class="learning-title">Front-end Libraries — FreeCodeCamp</span>
+      </div>
+      <div class="learning-item">
+        <span class="learning-date">10/2024</span>
+        <span class="learning-title">Algorithmique Java — CodinGame</span>
+      </div>
+      <div class="learning-item">
+        <span class="learning-date">02/2024</span>
+        <span class="learning-title">UI/UX & Responsive Design — FreeCodeCamp</span>
+      </div>
+      <div class="learning-item">
+        <span class="learning-date">07/2023</span>
+        <span class="learning-title">English for Engineers — Anglia Ruskin University</span>
+      </div>
+      <div class="learning-item">
+        <span class="learning-date">03/2023</span>
+        <span class="learning-title">Machine Learning & Data (Python) — FreeCodeCamp</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <span>PRENOM NOM</span> · Ingénieur Logiciel · Référent Technique · Paris, France
+</footer>
+
+<script>
+  // Active nav link highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id
+            ? 'var(--accent)'
+            : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
